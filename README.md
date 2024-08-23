@@ -16,3 +16,7 @@ The executable uses SC.EXE
     * Adding Microsoft.Extensions.Hosting.WindowsServices Nuget package
     * Change builder to execute UseWindowsService() extension method (in case of WindowsService)
 * Adding code to install and remove as Windows service
+
+## Linux systemd
+For systemd look this article
+https://devblogs.microsoft.com/dotnet/net-core-and-systemd/
