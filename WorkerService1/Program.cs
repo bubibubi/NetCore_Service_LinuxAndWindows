@@ -14,9 +14,19 @@ switch (verb)
         // Just run as daemon or over console
         break;
     case "-install":
+        if (!OperatingSystem.IsWindows())
+        {
+            WriteHelpToConsole();
+            return 1;
+        }
         Console.WriteLine($"Installing '{serviceName}' as a service");
         return RunScCommand("create", serviceName + " binPath= \"" + Assembly.GetExecutingAssembly().Location + "\"");
     case "-remove":
+        if (!OperatingSystem.IsWindows())
+        {
+            WriteHelpToConsole();
+            return 1;
+        }
         Console.WriteLine($"Removing '{serviceName}' from services");
         return RunScCommand("delete", serviceName);
     default:
